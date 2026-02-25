@@ -50,7 +50,7 @@ def verificar_actividad_curso(session, id_curso):
 def iniciar_sesion_moodle():
     login_url = "https://pregrado.ustabuca.edu.co/login/index.php"
     username = "extraccion_ustacv"
-    password = "Campusvirtual10+-/"
+    password = "000"
 
     try:
         session = requests.session()
@@ -299,4 +299,5 @@ def main(page: Page):
             )
         )
     )
+
 flet.app(target=main)
