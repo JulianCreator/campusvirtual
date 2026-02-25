@@ -1,11 +1,24 @@
-import time
-import random
-import flet
+"""
+FLUJO GENERAL:
+Login Automatico ->
+Navega categorías ->
+Entra a cursos ->
+Cuenta estudiantes y docentes ->
+Evalua actividad ->
+Genera Excel con reporte
+"""
+
+
+
+import time # esta maneja el tiempo (control del scraping)
+import random # generar numeros aleatorios (control del scraping)
+import flet # para crear interfaces con base a flutter
 from flet import Page, Column, Text, Dropdown, dropdown, TextField, ElevatedButton, Image, Container
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import os
+import requests #para hacer peticiones HTTP (conexion web)
+from bs4 import BeautifulSoup #Con esto es web scraping  permite pasear por  un codigo HTML (lectura HTML)
+# mas ligero, mas rapido y mas mantenible 
+import pandas as pd # manipular datos estructurados (generarion del reporte)
+import os #manejo de archivos, interacturar con el sistema operativo (manejo de archivos locales)
 
 def calcular_inactividad(texto_tiempo):
     if "años" in texto_tiempo or "año" in texto_tiempo or "Nunca" in texto_tiempo:
@@ -301,3 +314,4 @@ def main(page: Page):
     )
 
 flet.app(target=main)
+
