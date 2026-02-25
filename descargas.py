@@ -33,7 +33,7 @@ RECURSOS_ENCONTRADOS = []
 
 # Credenciales únicas (mismas para las 3 plataformas)
 MOODLE_USER = "extraccion_ustacv"
-MOODLE_PASS = "Campusvirtual10+-/"
+MOODLE_PASS = "000"
 
 # Opciones de plataformas con nombre, URL, color y sufijo de carpeta
 PLATAFORMAS = [
@@ -626,3 +626,4 @@ def main(page: Page):
 # Ejecutar flet
 if __name__ == "__main__":
     flet.app(target=main)
+
