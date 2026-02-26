@@ -7,12 +7,14 @@ from bs4 import BeautifulSoup #para parsear el HTML del sitio y extraer datos
 import pandas as pd #Para crear datos estructurados 
 import os #para interactuar con el sistema operativo
 
-def calcular_inactividad(texto_tiempo):
+def calcular_inactividad(texto_tiempo): #definimos una funcion con un parametro (texto_tiempo)
     if "años" in texto_tiempo or "año" in texto_tiempo or "Nunca" in texto_tiempo:
-        return True
-    elif "días" in texto_tiempo or "día" in texto_tiempo:
-        dias = int(texto_tiempo.split()[0])
-        return dias > 56
+        return True #establecememos una codicion por si la persona no ha entrado en un determinado tiempo
+    elif "días" in texto_tiempo or "día" in texto_tiempo: #Si la  primera condicion no se cumple entonces analisamos el string
+        #si entro hace dias cumple con la condición 
+        dias = int(texto_tiempo.split()[0]) #extraemos el numero de los dias 
+        #el split separa el texto por espacios, 5 dias [ "5", "dias"]
+        return dias > 56 #si es mayor es inactivo  si es igual o menor es activo (2 meses limite de actvidad)
     return False
 
 def verificar_actividad_curso(session, id_curso):
@@ -301,5 +303,6 @@ def main(page: Page):
     )
 
 flet.app(target=main)
+
 
 
