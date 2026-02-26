@@ -1,11 +1,11 @@
-import time
-import random
-import flet
-from flet import Page, Column, Text, Dropdown, dropdown, TextField, ElevatedButton, Image, Container
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import os
+import time #Para intriducir pausas controladas entre solicitudes HTTP y evitar saturar el servidor durante el scraping
+import random #Generar invertavlos aleatorios entre solicitudes  para simular un comportamiento mas humano
+import flet #Framework para interfaz grafica
+from flet import Page, Column, Text, Dropdown, dropdown, TextField, ElevatedButton, Image, Container #se importan componentes especificos de flet
+import requests #Para hacer solicitudes HTTP
+from bs4 import BeautifulSoup #para parsear el HTML del sitio y extraer datos
+import pandas as pd #Para crear datos estructurados 
+import os #para interactuar con el sistema operativo
 
 def calcular_inactividad(texto_tiempo):
     if "años" in texto_tiempo or "año" in texto_tiempo or "Nunca" in texto_tiempo:
@@ -301,4 +301,5 @@ def main(page: Page):
     )
 
 flet.app(target=main)
+
 
